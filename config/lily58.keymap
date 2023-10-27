@@ -11,12 +11,12 @@
 
 / {
 	behaviors {
-		td0: tap_dance_0 {
+		td_mt: tap_dance_0 {
 			compatible = "zmk,behavior-tap-dance";
-			label = "TAP_DANCE_0";
+			label = "TAP_DANCE_MOD_TAP";
 			#binding-cells = <0>;
 			tapping-term-ms = <200>;
-			bindings = <&kp ESC>, <&kp GRAVE>;
+			bindings = <&mt LSHIFT ESC>, <&kp ESC>;
 		};
     };
 
@@ -31,9 +31,9 @@
 // |  ALT  |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   |   '   |
 //                     | CTRL | GUI  | SPACE|  LOWER |  | RAISE | ENTER| BSPC  |  ALT  |
 			bindings = <
-&td0           &kp N1 &kp N2 &kp N3    &kp N4   &kp N5                         &kp N6   &kp N7   &kp N8    &kp N9  &kp N0   &kp EQUAL
+&kp GRAVE       &kp N1 &kp N2 &kp N3    &kp N4   &kp N5                         &kp N6   &kp N7   &kp N8    &kp N9  &kp N0   &kp EQUAL
 &kp TAB         &kp Q  &kp W  &kp E     &kp R    &kp T                          &kp Y    &kp U    &kp I     &kp O   &kp P    &kp MINUS
-&mt LSHIFT ESC  &kp A  &kp S  &kp D     &kp F    &kp G                          &kp H    &kp J    &kp K     &kp L   &kp SEMI &kp RSHFT
+&td_mt          &kp A  &kp S  &kp D     &kp F    &kp G                          &kp H    &kp J    &kp K     &kp L   &kp SEMI &kp RSHFT
 &kp LALT        &kp Z  &kp X  &kp C     &kp V    &kp B      &kp LBKT   &kp RBKT &kp N    &kp M    &kp COMMA &kp DOT &kp FSLH &kp SQT
                               &kp LCTRL &kp LGUI &kp SPACE  &mo 1      &mo 2    &kp RET  &kp BSPC &kp RALT
 			>;
